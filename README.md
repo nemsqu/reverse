@@ -4,6 +4,8 @@ This program reverses the input its given. The input can be from a file or from 
 
 ## Usage
 
+Download or clone the code before continuing. Then run the following commands in the folder the code is in.
+
 To compile the program run:
 
     gcc reverse.c -o reverse
