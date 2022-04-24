@@ -49,11 +49,11 @@ LINE *read_file(LINE *pline, FILE *pfile){
 
 		}
 
-        if ( (ptr->string = malloc(strlen(buffer) + 1)) == NULL) {
+        // add line
+        if ((ptr->string = malloc(strlen(buffer) + 1)) == NULL) {
 			fprintf(stderr, "Malloc failed.\n");
 			exit(1);
 		}
-		
 		strcpy(ptr->string, buffer);
     }
     if(buffer != NULL){
@@ -67,10 +67,12 @@ void reverse_print(LINE *pline, FILE *pfile){
 
     ptr = pline;
     
+    // find last item
 	while(ptr->pNext != NULL){
 		ptr = ptr->pNext;
 	}
 
+    // iterate and print in reverse order
 	while(ptr != NULL){
 		fprintf(pfile, "%s", ptr->string);
 		ptr = ptr->pPrev;
